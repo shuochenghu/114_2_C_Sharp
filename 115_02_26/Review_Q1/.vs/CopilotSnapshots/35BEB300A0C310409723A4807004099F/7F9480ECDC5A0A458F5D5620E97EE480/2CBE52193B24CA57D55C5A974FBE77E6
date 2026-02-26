@@ -1,0 +1,173 @@
+﻿namespace Review_Q1
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            computerPictureBox = new PictureBox();
+            playerPictureBox = new PictureBox();
+            computerLabel = new Label();
+            playerLabel = new Label();
+            resultLabel = new Label();
+            stoneButton = new Button();
+            paperButton = new Button();
+            scissorButton = new Button();
+            exitButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)computerPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerPictureBox).BeginInit();
+            SuspendLayout();
+            // 
+            // computerPictureBox
+            // 
+            computerPictureBox.BackColor = Color.BurlyWood;
+            computerPictureBox.Image = Properties.Resources.stone_computer;
+            computerPictureBox.Location = new Point(65, 103);
+            computerPictureBox.Name = "computerPictureBox";
+            computerPictureBox.Size = new Size(170, 130);
+            computerPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            computerPictureBox.TabIndex = 0;
+            computerPictureBox.TabStop = false;
+            computerPictureBox.Visible = false;
+            // 
+            // playerPictureBox
+            // 
+            playerPictureBox.BackColor = Color.BurlyWood;
+            playerPictureBox.Image = Properties.Resources.stone_player;
+            playerPictureBox.Location = new Point(298, 103);
+            playerPictureBox.Name = "playerPictureBox";
+            playerPictureBox.Size = new Size(170, 130);
+            playerPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            playerPictureBox.TabIndex = 1;
+            playerPictureBox.TabStop = false;
+            playerPictureBox.Visible = false;
+            // 
+            // computerLabel
+            // 
+            computerLabel.AutoSize = true;
+            computerLabel.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Bold);
+            computerLabel.Location = new Point(105, 50);
+            computerLabel.Name = "computerLabel";
+            computerLabel.Size = new Size(114, 41);
+            computerLabel.TabIndex = 2;
+            computerLabel.Text = "電腦出";
+            // 
+            // playerLabel
+            // 
+            playerLabel.AutoSize = true;
+            playerLabel.Font = new Font("Microsoft JhengHei UI", 16F, FontStyle.Bold);
+            playerLabel.Location = new Point(338, 50);
+            playerLabel.Name = "playerLabel";
+            playerLabel.Size = new Size(114, 41);
+            playerLabel.TabIndex = 3;
+            playerLabel.Text = "玩家出";
+            // 
+            // resultLabel
+            // 
+            resultLabel.BorderStyle = BorderStyle.FixedSingle;
+            resultLabel.Font = new Font("Microsoft JhengHei UI", 20F, FontStyle.Bold);
+            resultLabel.Location = new Point(103, 260);
+            resultLabel.Name = "resultLabel";
+            resultLabel.Size = new Size(330, 60);
+            resultLabel.TabIndex = 4;
+            resultLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // stoneButton
+            // 
+            stoneButton.Font = new Font("Microsoft JhengHei UI", 16F);
+            stoneButton.Location = new Point(43, 350);
+            stoneButton.Name = "stoneButton";
+            stoneButton.Size = new Size(120, 60);
+            stoneButton.TabIndex = 5;
+            stoneButton.Text = "石頭";
+            stoneButton.UseVisualStyleBackColor = true;
+            // 
+            // paperButton
+            // 
+            paperButton.Font = new Font("Microsoft JhengHei UI", 16F);
+            paperButton.Location = new Point(188, 350);
+            paperButton.Name = "paperButton";
+            paperButton.Size = new Size(120, 60);
+            paperButton.TabIndex = 6;
+            paperButton.Text = "布";
+            paperButton.UseVisualStyleBackColor = true;
+            // 
+            // scissorButton
+            // 
+            scissorButton.Font = new Font("Microsoft JhengHei UI", 16F);
+            scissorButton.Location = new Point(333, 350);
+            scissorButton.Name = "scissorButton";
+            scissorButton.Size = new Size(120, 60);
+            scissorButton.TabIndex = 7;
+            scissorButton.Text = "剪刀";
+            scissorButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            exitButton.Font = new Font("Microsoft JhengHei UI", 16F);
+            exitButton.Location = new Point(153, 430);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(190, 60);
+            exitButton.TabIndex = 8;
+            exitButton.Text = "結束遊戲";
+            exitButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(11F, 23F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(534, 544);
+            Controls.Add(exitButton);
+            Controls.Add(scissorButton);
+            Controls.Add(paperButton);
+            Controls.Add(stoneButton);
+            Controls.Add(resultLabel);
+            Controls.Add(playerLabel);
+            Controls.Add(computerLabel);
+            Controls.Add(playerPictureBox);
+            Controls.Add(computerPictureBox);
+            Name = "Form1";
+            Text = "猜拳遊戲";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)computerPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerPictureBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private PictureBox computerPictureBox;
+        private PictureBox playerPictureBox;
+        private Label computerLabel;
+        private Label playerLabel;
+        private Label resultLabel;
+        private Button stoneButton;
+        private Button paperButton;
+        private Button scissorButton;
+        private Button exitButton;
+    }
+}
