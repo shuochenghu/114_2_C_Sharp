@@ -1,0 +1,292 @@
+﻿namespace Review_Q2
+{
+    public partial class Form1 : Form
+    {
+        private const decimal OIL_CHANGE_PRICE = 780m;
+        private const decimal LUBRICATION_PRICE = 540m;
+        private const decimal CAR_WASH_PRICE = 900m;
+        private const decimal CHASSIS_CLEANING_PRICE = 2400m;
+        private const decimal TRANSMISSION_PRICE = 450m;
+        private const decimal MUFFLER_REPLACEMENT_PRICE = 3000m;
+        private const decimal TIRE_ROTATION_PRICE = 600m;
+        private const decimal LABOR_RATE = 600m;
+        private const decimal TAX_RATE = 0.06m;
+
+        public Form1()
+        {
+            InitializeComponent();
+            btnCalculateTotal.Click += calculateButton_Click;
+            btnClear.Click += clearButton_Click;
+            btnExit.Click += exitButton_Click;
+        }
+
+        private decimal OilLubeCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkOilChange.Checked)
+                charges += OIL_CHANGE_PRICE;
+
+            if (chkLubrication.Checked)
+                charges += LUBRICATION_PRICE;
+
+            return charges;
+        }
+
+        private decimal FlushCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkCarWash.Checked)
+                charges += CAR_WASH_PRICE;
+
+            if (chkChassisCleaningRustProofing.Checked)
+                charges += CHASSIS_CLEANING_PRICE;
+
+            return charges;
+        }
+
+        private decimal MiscCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkTransmission.Checked)
+                charges += TRANSMISSION_PRICE;
+
+            if (chkMufflerReplacement.Checked)
+                charges += MUFFLER_REPLACEMENT_PRICE;
+
+            if (chkTireRotation.Checked)
+                charges += TIRE_ROTATION_PRICE;
+
+            return charges;
+        }
+
+        private decimal OtherCharges()
+        {
+            decimal partsCost = 0m;
+            decimal laborHours = 0m;
+
+            if (decimal.TryParse(txtPartsCost.Text, out decimal parts) && parts >= 0)
+                partsCost = parts;
+
+            if (decimal.TryParse(txtLaborHours.Text, out decimal hours) && hours >= 0)
+                laborHours = hours;
+
+            return partsCost + (laborHours * LABOR_RATE);
+        }
+
+        private decimal TaxCharges()
+        {
+            decimal partsCost = 0m;
+
+            if (decimal.TryParse(txtPartsCost.Text, out decimal parts) && parts >= 0)
+                partsCost = parts;
+
+            return partsCost * TAX_RATE;
+        }
+
+        private decimal TotalCharges()
+        {
+            decimal serviceLaborFee = OilLubeCharges() + FlushCharges() + MiscCharges();
+            
+            decimal partsCost = 0m;
+            if (decimal.TryParse(txtPartsCost.Text, out decimal parts) && parts >= 0)
+                partsCost = parts;
+
+            decimal laborHours = 0m;
+            if (decimal.TryParse(txtLaborHours.Text, out decimal hours) && hours >= 0)
+                laborHours = hours;
+
+            decimal laborFee = laborHours * LABOR_RATE;
+            serviceLaborFee += laborFee;
+
+            decimal tax = TaxCharges();
+            decimal total = serviceLaborFee + partsCost + tax;
+
+            return total;
+        }
+
+        private void calculateButton_Click(object? sender, EventArgs e)
+        {
+            decimal serviceLaborFee = OilLubeCharges() + FlushCharges() + MiscCharges();
+            
+            decimal partsCost = 0m;
+            if (decimal.TryParse(txtPartsCost.Text, out decimal parts) && parts >= 0)
+                partsCost = parts;
+
+            decimal laborHours = 0m;
+            if (decimal.TryParse(txtLaborHours.Text, out decimal hours) && hours >= 0)
+                laborHours = hours;
+
+            decimal laborFee = laborHours * LABOR_RATE;
+            serviceLaborFee += laborFee;
+
+            decimal tax = TaxCharges();
+            decimal total = TotalCharges();
+
+            lblServiceLaborFeeValue.Text = serviceLaborFee.ToString("N0");
+            lblPartsFeeValue.Text = partsCost.ToString("N0");
+            lblTaxValue.Text = tax.ToString("N0");
+            lblTotalFeesValue.Text = total.ToString("N0");
+        }
+
+        private void clearButton_Click(object? sender, EventArgs e)
+        {
+            ClearOilLube();
+            ClearFlushes();
+            ClearMisc();
+            ClearOther();
+            ClearFees();
+        }
+
+        private void exitButton_Click(object? sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "是否要儲存維修明細到檔案？",
+                "儲存確認",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                SaveServiceDetailsToFile();
+                Application.Exit();
+            }
+            else if (result == DialogResult.No)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ClearOilLube()
+        {
+            chkOilChange.Checked = false;
+            chkLubrication.Checked = false;
+        }
+
+        private void ClearFlushes()
+        {
+            chkCarWash.Checked = false;
+            chkChassisCleaningRustProofing.Checked = false;
+        }
+
+        private void ClearMisc()
+        {
+            chkTransmission.Checked = false;
+            chkMufflerReplacement.Checked = false;
+            chkTireRotation.Checked = false;
+        }
+
+        private void ClearOther()
+        {
+            txtPartsCost.Clear();
+            txtLaborHours.Clear();
+        }
+
+        private void ClearFees()
+        {
+            lblServiceLaborFeeValue.Text = string.Empty;
+            lblPartsFeeValue.Text = string.Empty;
+            lblTaxValue.Text = string.Empty;
+            lblTotalFeesValue.Text = string.Empty;
+        }
+
+        private void SaveServiceDetailsToFile()
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "文字檔案 (*.txt)|*.txt|所有檔案 (*.*)|*.*",
+                    FilterIndex = 1,
+                    DefaultExt = "txt",
+                    FileName = $"維修明細_{DateTime.Now:yyyyMMdd_HHmmss}.txt"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, false, System.Text.Encoding.UTF8))
+                    {
+                        writer.WriteLine("========================================");
+                        writer.WriteLine("       汽車維修服務明細報表");
+                        writer.WriteLine("========================================");
+                        writer.WriteLine($"日期時間：{DateTime.Now:yyyy/MM/dd HH:mm:ss}");
+                        writer.WriteLine();
+
+                        writer.WriteLine("【機油的潤滑】");
+                        if (chkOilChange.Checked)
+                            writer.WriteLine($"  ✓ 更換機油：NT$ {OIL_CHANGE_PRICE:N0}");
+                        if (chkLubrication.Checked)
+                            writer.WriteLine($"  ✓ 潤滑保養：NT$ {LUBRICATION_PRICE:N0}");
+                        if (!chkOilChange.Checked && !chkLubrication.Checked)
+                            writer.WriteLine("  (無選擇項目)");
+                        writer.WriteLine($"  小計：NT$ {OilLubeCharges():N0}");
+                        writer.WriteLine();
+
+                        writer.WriteLine("【清洗服務】");
+                        if (chkCarWash.Checked)
+                            writer.WriteLine($"  ✓ 水箱清洗：NT$ {CAR_WASH_PRICE:N0}");
+                        if (chkChassisCleaningRustProofing.Checked)
+                            writer.WriteLine($"  ✓ 鋁鏈清洗+防鏽：NT$ {CHASSIS_CLEANING_PRICE:N0}");
+                        if (!chkCarWash.Checked && !chkChassisCleaningRustProofing.Checked)
+                            writer.WriteLine("  (無選擇項目)");
+                        writer.WriteLine($"  小計：NT$ {FlushCharges():N0}");
+                        writer.WriteLine();
+
+                        writer.WriteLine("【其他服務】");
+                        if (chkTransmission.Checked)
+                            writer.WriteLine($"  ✓ 檢驗：NT$ {TRANSMISSION_PRICE:N0}");
+                        if (chkMufflerReplacement.Checked)
+                            writer.WriteLine($"  ✓ 更換消音器：NT$ {MUFFLER_REPLACEMENT_PRICE:N0}");
+                        if (chkTireRotation.Checked)
+                            writer.WriteLine($"  ✓ 輪胎換位：NT$ {TIRE_ROTATION_PRICE:N0}");
+                        if (!chkTransmission.Checked && !chkMufflerReplacement.Checked && !chkTireRotation.Checked)
+                            writer.WriteLine("  (無選擇項目)");
+                        writer.WriteLine($"  小計：NT$ {MiscCharges():N0}");
+                        writer.WriteLine();
+
+                        writer.WriteLine("【零件和工時】");
+                        decimal partsCost = 0m;
+                        if (decimal.TryParse(txtPartsCost.Text, out decimal parts) && parts >= 0)
+                            partsCost = parts;
+                        writer.WriteLine($"  零件費用：NT$ {partsCost:N0}");
+
+                        decimal laborHours = 0m;
+                        if (decimal.TryParse(txtLaborHours.Text, out decimal hours) && hours >= 0)
+                            laborHours = hours;
+                        writer.WriteLine($"  工時數：{laborHours:N2} 小時");
+                        writer.WriteLine($"  工時費用：NT$ {(laborHours * LABOR_RATE):N0} (@ NT$ {LABOR_RATE:N0}/小時)");
+                        writer.WriteLine();
+
+                        writer.WriteLine("========================================");
+                        writer.WriteLine("【費用摘要】");
+                        writer.WriteLine("========================================");
+                        
+                        decimal serviceLaborTotal = OilLubeCharges() + FlushCharges() + MiscCharges() + (laborHours * LABOR_RATE);
+                        writer.WriteLine($"服務與工資：NT$ {serviceLaborTotal:N0}");
+                        writer.WriteLine($"零件：NT$ {partsCost:N0}");
+                        writer.WriteLine($"稅金 (零件)：NT$ {TaxCharges():N0} (6%)");
+                        writer.WriteLine("----------------------------------------");
+                        writer.WriteLine($"總費用：NT$ {TotalCharges():N0}");
+                        writer.WriteLine("========================================");
+                    }
+
+                    MessageBox.Show(
+                        $"維修明細已成功儲存至：\n{saveFileDialog.FileName}",
+                        "儲存成功",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"儲存檔案時發生錯誤：\n{ex.Message}",
+                    "錯誤",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+    }
+}
