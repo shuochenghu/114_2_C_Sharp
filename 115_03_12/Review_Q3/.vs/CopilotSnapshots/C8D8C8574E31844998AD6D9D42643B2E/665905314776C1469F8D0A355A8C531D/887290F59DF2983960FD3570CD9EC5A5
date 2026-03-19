@@ -1,0 +1,164 @@
+﻿namespace Review_Q3
+{
+    public partial class Form1 : Form
+    {
+        private int[] lotteryNumbers;
+        private int[] userNumbers;
+
+        public Form1()
+        {
+            InitializeComponent();
+            btnGenerate.Enabled = false;
+            
+            btnOpenLottery.Click += BtnOpenLottery_Click;
+            btnGenerate.Click += BtnGenerate_Click;
+            btnExit.Click += BtnExit_Click;
+        }
+
+        private void BtnOpenLottery_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "文本文件|*.txt|所有文件|*.*";
+            openFileDialog.Title = "選擇開獎號碼文件";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    listBoxLottery.Items.Clear();
+                    lotteryNumbers = new int[5];
+
+                    StreamReader reader = new StreamReader(openFileDialog.FileName);
+                    string line;
+                    int index = 0;
+
+                    while ((line = reader.ReadLine()) != null && index < 5)
+                    {
+                        if (int.TryParse(line.Trim(), out int number))
+                        {
+                            lotteryNumbers[index] = number;
+                            listBoxLottery.Items.Add(number);
+                            index++;
+                        }
+                    }
+
+                    reader.Close();
+
+                    if (index == 5)
+                    {
+                        btnGenerate.Enabled = true;
+                        MessageBox.Show("開獎號碼讀取成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("文件中的號碼數量不足！", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("讀取文件時發生錯誤：" + ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            userNumbers = new int[5];
+            Random random = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                int newNumber;
+                bool isDuplicate;
+
+                do
+                {
+                    isDuplicate = false;
+                    newNumber = random.Next(1, 50);
+
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (userNumbers[j] == newNumber)
+                        {
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+                } while (isDuplicate);
+
+                userNumbers[i] = newNumber;
+            }
+
+            label1.Text = userNumbers[0].ToString();
+            label2.Text = userNumbers[1].ToString();
+            label3.Text = userNumbers[2].ToString();
+            label4.Text = userNumbers[3].ToString();
+            label5.Text = userNumbers[4].ToString();
+
+            int matchCount = CompareNumbers();
+
+            string result = "產生的號碼：\n";
+            for (int i = 0; i < 5; i++)
+            {
+                result += userNumbers[i] + " ";
+            }
+            result += "\n\n中獎數量：" + matchCount + "\n\n";
+
+            if (matchCount == 5)
+            {
+                result += "恭喜！頭獎！";
+            }
+            else if (matchCount == 4)
+            {
+                result += "恭喜！貳獎！";
+            }
+            else if (matchCount == 3)
+            {
+                result += "恭喜！參獎！";
+            }
+            else if (matchCount == 2)
+            {
+                result += "恭喜！肆獎！";
+            }
+            else if (matchCount == 1)
+            {
+                result += "恭喜！伍獎！";
+            }
+            else
+            {
+                result += "很遺憾，未中獎！";
+            }
+
+            labelResult.Text = result;
+        }
+
+        private int CompareNumbers()
+        {
+            int matchCount = 0;
+
+            for (int i = 0; i < userNumbers.Length; i++)
+            {
+                for (int j = 0; j < lotteryNumbers.Length; j++)
+                {
+                    if (userNumbers[i] == lotteryNumbers[j])
+                    {
+                        matchCount++;
+                        break;
+                    }
+                }
+            }
+
+            return matchCount;
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("確定要離開程式嗎？", "離開", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+    }
+}
