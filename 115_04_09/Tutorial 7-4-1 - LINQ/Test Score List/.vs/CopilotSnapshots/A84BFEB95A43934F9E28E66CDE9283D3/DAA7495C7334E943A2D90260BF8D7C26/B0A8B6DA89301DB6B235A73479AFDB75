@@ -1,0 +1,161 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace Test_Score_List
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        
+
+       
+
+        private void getScoresButton_Click(object sender, EventArgs e)
+        {
+            double averageScore;    // To hold the average score
+            int numAboveAverage;    // Number of above average scores
+            int numBelowAverage;    // Number of below average scores
+
+            // Create a List to hold the scores.
+            List<int> scoresList = new List<int>();
+
+            // Read the scores from the file into the List.
+            ReadScores(scoresList);
+
+            // Display the scores.
+            DisplayScores(scoresList);
+
+            // Display the average score.
+            averageScore = Average(scoresList);
+            averageLabel.Text = averageScore.ToString("n1");
+
+            // Display the number of above average scores.
+            numAboveAverage = AboveAverage(scoresList, averageScore);
+            aboveAverageLabel.Text = numAboveAverage.ToString();
+
+            // Display the number of below average scores.
+            numBelowAverage = BelowAverage(scoresList);
+            belowAverageLabel.Text = numBelowAverage.ToString();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // Close the form.
+            this.Close();
+        }
+    }
+}
+        // 回傳：double 型別的平均成績
+        private double Average(List<int> scoresList)
+        {
+            // 宣告變數用來累計總分
+            int total = 0;
+
+            // 使用 foreach 迴圈將所有成績加總
+            foreach (int score in scoresList)
+            {
+                total += score;
+            }
+
+            // 回傳平均值（總分除以成績數量）
+            return (double)total / scoresList.Count;
+        }
+
+        // AboveAverage 方法用於計算高於平均成績的數量
+        // 參數：scoresList - 包含所有成績的 List<int> 集合
+        // 參數：avg - 已計算出的平均成績
+        // 回傳：int 型別的高於平均成績數量
+        private int AboveAverage(List<int> scoresList, double avg)
+        {
+            // 宣告計數器變數
+            int count = 0;
+
+            // 使用 foreach 迴圈檢查每一個成績
+            foreach (int score in scoresList)
+            {
+                // 若該成績高於平均值，計數器加 1
+                if (score > avg)
+                {
+                    count++;
+                }
+            }
+
+            // 回傳高於平均成績的數量
+            return count;
+        }
+
+        // BelowAverage 方法用於計算低於平均成績的數量
+        // 參數：scoresList - 包含所有成績的 List<int> 集合
+        // 回傳：int 型別的低於平均成績數量
+        private int BelowAverage(List<int> scoresList)
+        {
+            // 宣告計數器變數
+            int count = 0;
+
+            // 先計算平均成績
+            double avg = Average(scoresList);
+
+            // 使用 foreach 迴圈檢查每一個成績
+            foreach (int score in scoresList)
+            {
+                // 若該成績低於平均值，計數器加 1
+                if (score < avg)
+                {
+                    count++;
+                }
+            }
+
+            // 回傳低於平均成績的數量
+            return count;
+        }
+
+        private void getScoresButton_Click(object sender, EventArgs e)
+        {
+            // 宣告變數用來儲存平均成績
+            double averageScore;
+            // 宣告變數用來儲存高於平均的成績數量
+            int numAboveAverage;
+            // 宣告變數用來儲存低於平均的成績數量
+            int numBelowAverage;
+
+            // 建立一個 List 來儲存所有測驗成績
+            List<int> scoresList = new List<int>();
+
+            // 從檔案中讀取成績並存入 List
+            ReadScores(scoresList);
+
+            // 在 ListBox 中顯示所有成績
+            DisplayScores(scoresList);
+
+            // 計算並顯示平均成績
+            averageScore = Average(scoresList);
+            averageLabel.Text = averageScore.ToString("n1");
+
+            // 計算並顯示高於平均的成績數量
+            numAboveAverage = AboveAverage(scoresList, averageScore);
+            aboveAverageLabel.Text = numAboveAverage.ToString();
+
+            // 計算並顯示低於平均的成績數量
+            numBelowAverage = BelowAverage(scoresList);
+            belowAverageLabel.Text = numBelowAverage.ToString();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉表單並結束應用程式
+            this.Close();
+        }
+    }
+}
