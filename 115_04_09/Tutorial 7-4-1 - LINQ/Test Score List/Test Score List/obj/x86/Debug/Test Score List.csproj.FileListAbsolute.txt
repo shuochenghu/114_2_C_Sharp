@@ -73,3 +73,14 @@ C:\Users\m303\Desktop\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score L
 C:\Users\m303\Desktop\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.csproj.CoreCompileInputs.cache
 C:\Users\m303\Desktop\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.exe
 C:\Users\m303\Desktop\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.pdb
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.csproj.AssemblyReference.cache
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.exe.config
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test_Score_List.Form1.resources
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test_Score_List.Properties.Resources.resources
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.csproj.GenerateResource.cache
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.csproj.CoreCompileInputs.cache
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.exe
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\obj\x86\Debug\Test Score List.pdb
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\bin\Debug\Test Score List.exe.config
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\bin\Debug\Test Score List.exe
+E:\Git Repos\114_2_C_Sharp\115_04_09\Tutorial 7-4-1 - LINQ\Test Score List\Test Score List\bin\Debug\Test Score List.pdb

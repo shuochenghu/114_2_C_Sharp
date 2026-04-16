@@ -168,12 +168,12 @@ namespace Test_Score_List
             //    where scoresList[index] == searchScore
             //    select new { Index = index, Record = studentRecords[index] };
 
-            // 使用 LINQ 查詢語法搜尋所有符合條件的成績（包含索引）
-            // 這裡使用 Enumerable.Range 來取得每筆記錄的索引，並回傳含 Index 和 Record 的匿名物件
+            // 使用 LINQ 查詢語法在 studentRecords 中搜尋匹配的記錄（不使用 Enumerable.Range 或 Lambda）
             var searchQuery =
-                from index in Enumerable.Range(0, studentRecords.Count)
-                where scoresList[index] == searchScore
-                select studentRecords[index];
+                from record in studentRecords
+                let parts = record.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                where parts.Length >= 2 && int.TryParse(parts[1], out int sc) && sc == searchScore
+                select record;
 
             // 將查詢結果轉換為 List
             var foundItems = searchQuery.ToList();
@@ -187,7 +187,7 @@ namespace Test_Score_List
                 // 逐一輸出每筆符合的記錄
                 foreach (var item in foundItems)
                 {
-                    result.AppendLine($"{item}");
+                    result.AppendLine($"第 {item.Index + 1} 筆：{item.Record}");
                 }
 
                 // 顯示結果
