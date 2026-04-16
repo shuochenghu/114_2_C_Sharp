@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Telephone_Format
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        // IsValidNumber方法接受一個字串參數
+        // 檢查字串是否包含恰好10個數字
+        // 如果是10個數字則返回true，否則返回false
+        private bool IsValidNumber(string str)
+        {
+            // 檢查字串是否為空或長度不為10
+            if (str == null || str.Length != 10)
+                return false;
+
+            // 逐一檢查字串中的每個字元
+            // 確保所有字元都是數字(0-9)
+            foreach (char c in str)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+
+            // 所有字元都是數字，返回true
+            return true;
+        }
+
+        // The TelephoneFormat method accepts a string argument
+        // by reference and formats it as a telephone number.
+        private void TelephoneFormat(ref string str)
+        {
+            
+        }
+
+        private void formatButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // Close the form.
+            this.Close();
+        }
+    }
+}

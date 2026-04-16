@@ -181,17 +181,19 @@ namespace Test_Score_List
             if (foundItems.Count > 0)
             {
                 // 建立輸出字串，包含所有符合的項目
-                StringBuilder result = new StringBuilder();
-                result.AppendLine($"找到 {foundItems.Count} 筆分數為 {searchScore} 的記錄：");
-                
+                //StringBuilder result = new StringBuilder();
+                //result.AppendLine($"找到 {foundItems.Count} 筆分數為 {searchScore} 的記錄：");
+                searchResultLabel.Text = $"找到 {foundItems.Count} 筆分數為 {searchScore} 的記錄：";
+
                 // 逐一輸出每筆符合的記錄
                 foreach (var item in foundItems)
                 {
-                    result.AppendLine($"{item}");
+                    //result.AppendLine($"{item}");
+                    searchResultLabel.Text += $"{item}\n";
                 }
 
                 // 顯示結果
-                searchResultLabel.Text = result.ToString().TrimEnd('\r', '\n');
+                //searchResultLabel.Text = result.ToString().TrimEnd('\r', '\n');
             }
             else
             {
