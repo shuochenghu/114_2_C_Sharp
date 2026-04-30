@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace CSV_Reader
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void getScoresButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader inputFile;
+                
+                using (inputFile = File.OpenText("Grades.csv"))
+                {
+                    string line;
+                    while (!inputFile.EndOfStream)
+                    {
+                        line = inputFile.ReadLine();
+                        string[] fields = line.Split(',');
+                        // Expected format: 班級,學號,姓名,score1,score2,score3,score4,score5
+                        if (fields.Length == 8)
+                        {
+                            string className = fields[0];
+                            string studentId = fields[1];
+                            string studentName = fields[2];
+                            
+                            int total = 0;
+                            bool validScores = true;
+                            
+                            // Parse scores from fields[3] to fields[7]
+                            for (int i = 3; i < 8; i++)
+                            {
+                                if (int.TryParse(fields[i], out int score))
+                                {
+                                    total += score;
+                                }
+                                else
+                                {
+                                    validScores = false;
+                                    break;
+                                }
+                            }
+                            
+                            if (validScores)
+                            {
+                                double average = (double)total / 5;
+                                string output = $"{className} {studentId} {studentName} {average.ToString("F2")}";
+                                averagesListBox.Items.Add(output);
+                            }
+                            else
+                            {
+                                MessageBox.Show("無法解析成績: " + line);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("資料格式錯誤: " + line);
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("讀取 CSV 檔案時發生錯誤: " + ex.Message);
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // Close the form.
+            this.Close();
+        }
+    }
+}
