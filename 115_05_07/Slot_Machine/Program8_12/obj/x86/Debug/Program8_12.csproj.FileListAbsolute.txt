@@ -1,0 +1,43 @@
+C:\csharp\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.exe
+C:\csharp\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.pdb
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Form1.resources
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Properties.Resources.resources
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.exe
+C:\csharp\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.pdb
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.exe
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.pdb
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.exe
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.pdb
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Form1.resources
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Properties.Resources.resources
+C:\Users\Chris\Desktop\C#\Solutions Manual\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csproj.GenerateResource.Cache
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.exe
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.pdb
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.exe
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\bin\Debug\Program8_12.pdb
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csprojResolveAssemblyReference.cache
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Form1.resources
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Properties.Resources.resources
+C:\Users\Tony\Documents\Books\C#\4th Edition\Solutions to Programming Problems\chapter08\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csproj.GenerateResource.Cache
+C:\Users\User\source\repos\Program8_12\Program8_12\bin\Debug\Program8_12.exe
+C:\Users\User\source\repos\Program8_12\Program8_12\bin\Debug\Program8_12.pdb
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Form1.resources
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.Properties.Resources.resources
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.exe
+C:\Users\User\source\repos\Program8_12\Program8_12\obj\x86\Debug\Program8_12.pdb
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\bin\Debug\Program8_12.exe.config
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\bin\Debug\Program8_12.exe
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.csproj.AssemblyReference.cache
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.Form1.resources
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.Properties.Resources.resources
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.csproj.GenerateResource.cache
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.csproj.CoreCompileInputs.cache
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.exe
+D:\Visual C#\114試題\下學期\Slot_Machine\Program8_12\obj\x86\Debug\Program8_12.pdb
