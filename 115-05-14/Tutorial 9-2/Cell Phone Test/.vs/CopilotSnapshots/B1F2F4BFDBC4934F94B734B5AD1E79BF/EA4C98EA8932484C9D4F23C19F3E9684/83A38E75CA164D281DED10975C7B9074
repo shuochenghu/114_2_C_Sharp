@@ -1,0 +1,266 @@
+﻿namespace Cell_Phone_Test
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // 初始化所有控制項
+            this.exitButton = new System.Windows.Forms.Button();
+            this.createObjectButton = new System.Windows.Forms.Button();
+            this.objectPropertiesGroupBox = new System.Windows.Forms.GroupBox();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.modelLabel = new System.Windows.Forms.Label();
+            this.brandLabel = new System.Windows.Forms.Label();
+            this.outputPriceLabel = new System.Windows.Forms.Label();
+            this.outputModelLabel = new System.Windows.Forms.Label();
+            this.outputBrandLabel = new System.Windows.Forms.Label();
+            this.enterDataGroupBox = new System.Windows.Forms.GroupBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.modelTextBox = new System.Windows.Forms.TextBox();
+            this.brandTextBox = new System.Windows.Forms.TextBox();
+            this.promptPriceLabel = new System.Windows.Forms.Label();
+            this.promptModelLabel = new System.Windows.Forms.Label();
+            this.promptBrandLabel = new System.Windows.Forms.Label();
+            this.objectPropertiesGroupBox.SuspendLayout();
+            this.enterDataGroupBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // 結束按鈕 - 用於關閉應用程式
+            // 
+            this.exitButton.Location = new System.Drawing.Point(145, 280);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(90, 48);
+            this.exitButton.TabIndex = 7;
+            this.exitButton.Text = "結束";
+            this.exitButton.Font = new System.Drawing.Font("細明體", 18F);
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // 建立物件按鈕 - 用於建立手機物件並顯示其屬性
+            // 
+            this.createObjectButton.Location = new System.Drawing.Point(40, 280);
+            this.createObjectButton.Name = "createObjectButton";
+            this.createObjectButton.Size = new System.Drawing.Size(90, 48);
+            this.createObjectButton.TabIndex = 6;
+            this.createObjectButton.Text = "建立物件";
+            this.createObjectButton.Font = new System.Drawing.Font("細明體", 18F);
+            this.createObjectButton.UseVisualStyleBackColor = true;
+            this.createObjectButton.Click += new System.EventHandler(this.createObjectButton_Click);
+            // 
+            // 物件屬性群組 - 顯示手機物件的品牌、型號和價格
+            // 
+            this.objectPropertiesGroupBox.Controls.Add(this.priceLabel);
+            this.objectPropertiesGroupBox.Controls.Add(this.modelLabel);
+            this.objectPropertiesGroupBox.Controls.Add(this.brandLabel);
+            this.objectPropertiesGroupBox.Controls.Add(this.outputPriceLabel);
+            this.objectPropertiesGroupBox.Controls.Add(this.outputModelLabel);
+            this.objectPropertiesGroupBox.Controls.Add(this.outputBrandLabel);
+            this.objectPropertiesGroupBox.Location = new System.Drawing.Point(30, 150);
+            this.objectPropertiesGroupBox.Name = "objectPropertiesGroupBox";
+            this.objectPropertiesGroupBox.Size = new System.Drawing.Size(220, 120);
+            this.objectPropertiesGroupBox.TabIndex = 5;
+            this.objectPropertiesGroupBox.TabStop = false;
+            this.objectPropertiesGroupBox.Text = "物件屬性";
+            this.objectPropertiesGroupBox.Font = new System.Drawing.Font("細明體", 18F);
+            // 
+            // 價格標籤 - 顯示手機價格
+            // 
+            this.priceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.priceLabel.Location = new System.Drawing.Point(110, 80);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(100, 28);
+            this.priceLabel.TabIndex = 7;
+            this.priceLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.priceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // 型號標籤 - 顯示手機型號
+            // 
+            this.modelLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.modelLabel.Location = new System.Drawing.Point(110, 50);
+            this.modelLabel.Name = "modelLabel";
+            this.modelLabel.Size = new System.Drawing.Size(100, 28);
+            this.modelLabel.TabIndex = 6;
+            this.modelLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.modelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // 品牌標籤 - 顯示手機品牌
+            // 
+            this.brandLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.brandLabel.Location = new System.Drawing.Point(110, 20);
+            this.brandLabel.Name = "brandLabel";
+            this.brandLabel.Size = new System.Drawing.Size(100, 28);
+            this.brandLabel.TabIndex = 4;
+            this.brandLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.brandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // 價格提示標籤 - 標示價格
+            // 
+            this.outputPriceLabel.AutoSize = false;
+            this.outputPriceLabel.Location = new System.Drawing.Point(10, 80);
+            this.outputPriceLabel.Name = "outputPriceLabel";
+            this.outputPriceLabel.Size = new System.Drawing.Size(100, 28);
+            this.outputPriceLabel.TabIndex = 5;
+            this.outputPriceLabel.Text = "價格：";
+            this.outputPriceLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.outputPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // 型號提示標籤 - 標示型號
+            // 
+            this.outputModelLabel.AutoSize = false;
+            this.outputModelLabel.Location = new System.Drawing.Point(10, 50);
+            this.outputModelLabel.Name = "outputModelLabel";
+            this.outputModelLabel.Size = new System.Drawing.Size(100, 28);
+            this.outputModelLabel.TabIndex = 4;
+            this.outputModelLabel.Text = "型號：";
+            this.outputModelLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.outputModelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // 品牌提示標籤 - 標示品牌
+            // 
+            this.outputBrandLabel.AutoSize = false;
+            this.outputBrandLabel.Location = new System.Drawing.Point(10, 20);
+            this.outputBrandLabel.Name = "outputBrandLabel";
+            this.outputBrandLabel.Size = new System.Drawing.Size(100, 28);
+            this.outputBrandLabel.TabIndex = 3;
+            this.outputBrandLabel.Text = "品牌：";
+            this.outputBrandLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.outputBrandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // 輸入資料群組 - 用於輸入手機品牌、型號和價格
+            // 
+            this.enterDataGroupBox.Controls.Add(this.priceTextBox);
+            this.enterDataGroupBox.Controls.Add(this.modelTextBox);
+            this.enterDataGroupBox.Controls.Add(this.brandTextBox);
+            this.enterDataGroupBox.Controls.Add(this.promptPriceLabel);
+            this.enterDataGroupBox.Controls.Add(this.promptModelLabel);
+            this.enterDataGroupBox.Controls.Add(this.promptBrandLabel);
+            this.enterDataGroupBox.Location = new System.Drawing.Point(30, 15);
+            this.enterDataGroupBox.Name = "enterDataGroupBox";
+            this.enterDataGroupBox.Size = new System.Drawing.Size(220, 125);
+            this.enterDataGroupBox.TabIndex = 4;
+            this.enterDataGroupBox.TabStop = false;
+            this.enterDataGroupBox.Text = "輸入手機資料";
+            this.enterDataGroupBox.Font = new System.Drawing.Font("細明體", 18F);
+            // 
+            // 價格輸入框 - 用於輸入手機價格
+            // 
+            this.priceTextBox.Location = new System.Drawing.Point(110, 85);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(100, 28);
+            this.priceTextBox.Font = new System.Drawing.Font("細明體", 18F);
+            this.priceTextBox.TabIndex = 5;
+            // 
+            // 型號輸入框 - 用於輸入手機型號
+            // 
+            this.modelTextBox.Location = new System.Drawing.Point(110, 55);
+            this.modelTextBox.Name = "modelTextBox";
+            this.modelTextBox.Size = new System.Drawing.Size(100, 28);
+            this.modelTextBox.Font = new System.Drawing.Font("細明體", 18F);
+            this.modelTextBox.TabIndex = 4;
+            // 
+            // 品牌輸入框 - 用於輸入手機品牌
+            // 
+            this.brandTextBox.Location = new System.Drawing.Point(110, 25);
+            this.brandTextBox.Name = "brandTextBox";
+            this.brandTextBox.Size = new System.Drawing.Size(100, 28);
+            this.brandTextBox.Font = new System.Drawing.Font("細明體", 18F);
+            this.brandTextBox.TabIndex = 3;
+            // 
+            // 價格提示標籤 - 用於提示輸入價格
+            // 
+            this.promptPriceLabel.AutoSize = false;
+            this.promptPriceLabel.Location = new System.Drawing.Point(10, 85);
+            this.promptPriceLabel.Name = "promptPriceLabel";
+            this.promptPriceLabel.Size = new System.Drawing.Size(100, 28);
+            this.promptPriceLabel.TabIndex = 2;
+            this.promptPriceLabel.Text = "價格：";
+            this.promptPriceLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.promptPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // 型號提示標籤 - 用於提示輸入型號
+            // 
+            this.promptModelLabel.AutoSize = false;
+            this.promptModelLabel.Location = new System.Drawing.Point(10, 55);
+            this.promptModelLabel.Name = "promptModelLabel";
+            this.promptModelLabel.Size = new System.Drawing.Size(100, 28);
+            this.promptModelLabel.TabIndex = 1;
+            this.promptModelLabel.Text = "型號：";
+            this.promptModelLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.promptModelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // 品牌提示標籤 - 用於提示輸入品牌
+            // 
+            this.promptBrandLabel.AutoSize = false;
+            this.promptBrandLabel.Location = new System.Drawing.Point(10, 25);
+            this.promptBrandLabel.Name = "promptBrandLabel";
+            this.promptBrandLabel.Size = new System.Drawing.Size(100, 28);
+            this.promptBrandLabel.TabIndex = 0;
+            this.promptBrandLabel.Text = "品牌：";
+            this.promptBrandLabel.Font = new System.Drawing.Font("細明體", 18F);
+            this.promptBrandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Form1 - 手機物件測試表單
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(280, 350);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.createObjectButton);
+            this.Controls.Add(this.objectPropertiesGroupBox);
+            this.Controls.Add(this.enterDataGroupBox);
+            this.Name = "Form1";
+            this.Text = "手機物件測試";
+            this.Font = new System.Drawing.Font("細明體", 18F);
+            this.objectPropertiesGroupBox.ResumeLayout(false);
+            this.objectPropertiesGroupBox.PerformLayout();
+            this.enterDataGroupBox.ResumeLayout(false);
+            this.enterDataGroupBox.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button createObjectButton;
+        private System.Windows.Forms.GroupBox objectPropertiesGroupBox;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Label modelLabel;
+        private System.Windows.Forms.Label brandLabel;
+        private System.Windows.Forms.Label outputPriceLabel;
+        private System.Windows.Forms.Label outputModelLabel;
+        private System.Windows.Forms.Label outputBrandLabel;
+        private System.Windows.Forms.GroupBox enterDataGroupBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox modelTextBox;
+        private System.Windows.Forms.TextBox brandTextBox;
+        private System.Windows.Forms.Label promptPriceLabel;
+        private System.Windows.Forms.Label promptModelLabel;
+        private System.Windows.Forms.Label promptBrandLabel;
+    }
+}
+
