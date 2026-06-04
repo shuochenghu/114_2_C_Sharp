@@ -1,0 +1,111 @@
+﻿namespace Tutorial_9_3_3
+{
+    partial class MainForm
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button openAccountButton;
+        private System.Windows.Forms.Button depositButton;
+        private System.Windows.Forms.Button withdrawButton;
+        private System.Windows.Forms.Button exitButton; 
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // 初始化所有按鈕物件
+            this.openAccountButton = new System.Windows.Forms.Button();
+            this.depositButton = new System.Windows.Forms.Button();
+            this.withdrawButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // openAccountButton（開戶按鈕）
+            // 功能：開設新帳戶
+            // 位置：距離左邊 50 像素，距離頂部 40 像素
+            // 大小：寬 180 像素，高 60 像素，確保足夠的空間顯示 18 號字體
+            this.openAccountButton.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.openAccountButton.Location = new System.Drawing.Point(50, 40);
+            this.openAccountButton.Name = "openAccountButton";
+            this.openAccountButton.Size = new System.Drawing.Size(180, 60);
+            this.openAccountButton.TabIndex = 0;
+            this.openAccountButton.Text = "開戶";
+            this.openAccountButton.UseVisualStyleBackColor = true;
+            // 
+            // depositButton（存款按鈕）
+            // 功能：進行存款交易
+            // 位置：距離第一個按鈕右側 30 像素，距離頂部 40 像素
+            // 大小：寬 180 像素，高 60 像素，與其他按鈕保持一致
+            this.depositButton.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.depositButton.Location = new System.Drawing.Point(260, 40);
+            this.depositButton.Name = "depositButton";
+            this.depositButton.Size = new System.Drawing.Size(180, 60);
+            this.depositButton.TabIndex = 1;
+            this.depositButton.Text = "存款";
+            this.depositButton.UseVisualStyleBackColor = true;
+            // 
+            // withdrawButton（提款按鈕）
+            // 功能：進行提款交易
+            // 位置：距離第二個按鈕右側 30 像素，距離頂部 40 像素
+            // 大小：寬 180 像素，高 60 像素，與其他按鈕保持一致
+            this.withdrawButton.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.withdrawButton.Location = new System.Drawing.Point(470, 40);
+            this.withdrawButton.Name = "withdrawButton";
+            this.withdrawButton.Size = new System.Drawing.Size(180, 60);
+            this.withdrawButton.TabIndex = 2;
+            this.withdrawButton.Text = "提款";
+            this.withdrawButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton（離開按鈕）
+            // 功能：結束程式
+            // 位置：窗體中央下方，距離頂部 150 像素，水平居中
+            // 大小：寬 180 像素，高 60 像素，與其他按鈕保持一致
+            // 計算：(800 - 180) / 2 = 310，因此 X 座標為 310
+            this.exitButton.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exitButton.Location = new System.Drawing.Point(310, 150);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(180, 60);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "離開";
+            this.exitButton.UseVisualStyleBackColor = true;
+            // 
+            // MainForm（主窗體設定）
+            // 設定窗體的基本屬性，包括大小、自動縮放和標題
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 300);
+            // 將所有按鈕控制項加入到窗體的控制項集合中
+            // 注意：加入順序決定了 Z 軸順序（最後加入的會在最上面）
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.withdrawButton);
+            this.Controls.Add(this.depositButton);
+            this.Controls.Add(this.openAccountButton);
+            this.Name = "MainForm";
+            this.Text = "銀行系統";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+    }
+}
+

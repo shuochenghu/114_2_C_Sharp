@@ -1,0 +1,170 @@
+﻿namespace Tutorial_9_3_3
+{
+    partial class OpenAccountForm
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        
+        // 標籤控制項
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label accountNumberLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label initialAmountLabel;
+        
+        // 文字輸入框
+        private System.Windows.Forms.TextBox accountNumberTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox initialAmountTextBox;
+        
+        // 按鈕
+        private System.Windows.Forms.Button createAccountButton;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // 初始化標籤和文字輸入框
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.accountNumberLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.initialAmountLabel = new System.Windows.Forms.Label();
+            this.accountNumberTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.initialAmountTextBox = new System.Windows.Forms.TextBox();
+            this.createAccountButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            
+            // 
+            // titleLabel（標題標籤「建立帳戶」）
+            // 位置：左上方，距離頂部 20 像素，距離左邊 20 像素
+            // 大小：標題顯示用
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.titleLabel.Location = new System.Drawing.Point(20, 20);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(150, 40);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "建立帳戶";
+            
+            // 
+            // accountNumberLabel（帳號標籤）
+            // 位置：距離左邊 60 像素，距離頂部 100 像素
+            // 大小：標籤文字顯示
+            this.accountNumberLabel.AutoSize = true;
+            this.accountNumberLabel.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.accountNumberLabel.Location = new System.Drawing.Point(60, 100);
+            this.accountNumberLabel.Name = "accountNumberLabel";
+            this.accountNumberLabel.Size = new System.Drawing.Size(88, 24);
+            this.accountNumberLabel.TabIndex = 1;
+            this.accountNumberLabel.Text = "帳號：";
+            
+            // 
+            // accountNumberTextBox（帳號輸入框）
+            // 位置：帳號標籤右側，距離頂部 95 像素
+            // 大小：寬 300 像素，高 30 像素
+            this.accountNumberTextBox.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.accountNumberTextBox.Location = new System.Drawing.Point(260, 95);
+            this.accountNumberTextBox.Name = "accountNumberTextBox";
+            this.accountNumberTextBox.Size = new System.Drawing.Size(300, 30);
+            this.accountNumberTextBox.TabIndex = 2;
+            
+            // 
+            // nameLabel（姓名標籤）
+            // 位置：距離左邊 60 像素，距離頂部 150 像素
+            // 大小：標籤文字顯示
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nameLabel.Location = new System.Drawing.Point(60, 155);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(88, 24);
+            this.nameLabel.TabIndex = 3;
+            this.nameLabel.Text = "姓名：";
+            
+            // 
+            // nameTextBox（姓名輸入框）
+            // 位置：姓名標籤右側，距離頂部 150 像素
+            // 大小：寬 300 像素，高 30 像素
+            this.nameTextBox.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nameTextBox.Location = new System.Drawing.Point(260, 150);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(300, 30);
+            this.nameTextBox.TabIndex = 4;
+            
+            // 
+            // initialAmountLabel（開戶金額標籤）
+            // 位置：距離左邊 30 像素，距離頂部 205 像素
+            // 大小：標籤文字顯示
+            this.initialAmountLabel.AutoSize = true;
+            this.initialAmountLabel.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.initialAmountLabel.Location = new System.Drawing.Point(30, 210);
+            this.initialAmountLabel.Name = "initialAmountLabel";
+            this.initialAmountLabel.Size = new System.Drawing.Size(118, 24);
+            this.initialAmountLabel.TabIndex = 5;
+            this.initialAmountLabel.Text = "開戶金額：";
+            
+            // 
+            // initialAmountTextBox（開戶金額輸入框）
+            // 位置：開戶金額標籤右側，距離頂部 205 像素
+            // 大小：寬 300 像素，高 30 像素
+            this.initialAmountTextBox.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.initialAmountTextBox.Location = new System.Drawing.Point(260, 205);
+            this.initialAmountTextBox.Name = "initialAmountTextBox";
+            this.initialAmountTextBox.Size = new System.Drawing.Size(300, 30);
+            this.initialAmountTextBox.TabIndex = 6;
+            
+            // 
+            // createAccountButton（建立帳戶按鈕）
+            // 位置：右側，距離頂部 210 像素
+            // 大小：寬 120 像素，高 40 像素
+            this.createAccountButton.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.createAccountButton.Location = new System.Drawing.Point(620, 205);
+            this.createAccountButton.Name = "createAccountButton";
+            this.createAccountButton.Size = new System.Drawing.Size(120, 40);
+            this.createAccountButton.TabIndex = 7;
+            this.createAccountButton.Text = "建立帳戶";
+            this.createAccountButton.UseVisualStyleBackColor = true;
+            
+            // 
+            // OpenAccountForm（開戶表單窗體設定）
+            // 設定窗體的基本屬性
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 300);
+            // 將所有控制項加入到窗體的控制項集合中
+            this.Controls.Add(this.createAccountButton);
+            this.Controls.Add(this.initialAmountTextBox);
+            this.Controls.Add(this.initialAmountLabel);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.accountNumberTextBox);
+            this.Controls.Add(this.accountNumberLabel);
+            this.Controls.Add(this.titleLabel);
+            this.Name = "OpenAccountForm";
+            this.Text = "建立帳戶";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+    }
+}

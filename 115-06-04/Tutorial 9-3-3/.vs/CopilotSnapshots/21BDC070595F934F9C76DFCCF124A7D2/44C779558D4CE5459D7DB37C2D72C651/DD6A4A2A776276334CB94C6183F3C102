@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Tutorial_9_3_3
+{
+    public partial class DepositForm : Form
+    {
+        private List<BankAccount> bankAccounts;
+        public DepositForm(List<BankAccount> accounts)
+        {
+            InitializeComponent();
+            bankAccounts = accounts;
+        }
+
+        /// <summary>
+        /// searchAccount 方法
+        /// 功能：根據輸入的帳號在列表中查找對應的銀行帳戶物件
+        /// 參數：accountNumber - 要查找的帳號
+        /// 返回值：找到的 BankAccount 物件，找不到則返回 null
+        /// </summary>
+        private BankAccount searchAccount(string accountNumber)
+        {
+            // 使用 FirstOrDefault 在列表中查找對應帳號的帳戶物件
+            // 如果找到，返回該物件；如果找不到，返回 null
+            return bankAccounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+        }
+
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            // 取得用戶輸入的帳號
+            string accountNumber = accountNumberTextBox.Text;
+            // 存款金額變數
+            decimal depositAmount;
+
+            // 檢查帳號輸入是否為空
+            if (string.IsNullOrWhiteSpace(accountNumber))
+            {
+                resultLabel.Text = "存款失敗！\n\n請輸入有效的帳號。";
+                return;
+            }
+
+            // 驗證存款金額是否為有效的數字
+            if (!decimal.TryParse(amountTextBox.Text, out depositAmount))
+            {
+                resultLabel.Text = "存款失敗！\n\n請輸入有效的存款金額。";
+                return;
+            }
+
+            // 檢查存款金額是否為正數
+            if (depositAmount <= 0)
+            {
+                resultLabel.Text = "存款失敗！\n\n存款金額必須大於零。";
+                return;
+            }
+
+            // 調用 searchAccount 方法查找帳戶
+            BankAccount account = searchAccount(accountNumber);
+
+            if (account == null)
+            {
+                // 帳號不存在
+                resultLabel.Text = string.Format(
+                    "存款失敗！\n\n帳號 {0} 不存在。",
+                    accountNumber
+                );
+                return;
+            }
+
+            // 執行存款操作
+            account.Deposit(depositAmount);
+
+            // 顯示存款成功的結果資訊
+            resultLabel.Text = string.Format(
+                "存款成功！\n\n帳號：{0}\n存款金額：{1:C}\n目前餘額：{2:C}",
+                accountNumber,
+                depositAmount,
+                account.Balance
+            );
+
+            // 清空輸入框，方便下次輸入
+            accountNumberTextBox.Clear();
+            amountTextBox.Clear();
+        }
+    }
+}
